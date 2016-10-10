@@ -1,0 +1,34 @@
+<div class="container">
+<h1>Attribute Directives</h1>
+<h2>ngClass / ngStyle</h2>
+<div class='div-1' [ngStyle]="{'background-color': 'red'}"></div>
+<h2>Custom Attribute Directive</h2>
+<div class='div-1' [highlight]="'blue'" [defaultColor]="'red'">Hover to change my color</div>
+<h1>Structural Directives</h1>
+<h2>*ngIf</h2>
+<div class="div-1" *ngIf="switch">Conditional text</div>
+<template [ngIf]="switch">
+    <div class="div-1">
+       Conditional text 
+    </div>
+</template>
+<button class="btn btn-success" (click)="onSwitch()">Switch</button>
+<h2>*ngFor</h2>
+<ul>
+    <li *ngFor="let item of items; let i = index">{{item}} - (Index: {{i}})</li>
+</ul>
+<h2>ngSwitch</h2>
+<div class="div-1" [ngSwitch]="value">
+    <p *ngSwitchCase="10">10</p>
+    <p *ngSwitchCase="100">100</p>
+    <p *ngSwitchDefault>Default</p>
+</div>
+<p [ngSwitch]="value">
+    <template [ngSwitchCase]="10">10</template>
+    <template [ngSwitchCase]="100">100</template>
+    <template ngSwitchDefault>Default</template>
+</p>
+<h2>Unless Directive</h2>
+<div id="div-1" *unless="switch">Hello World</div>
+</div>
+<br><br><br><br><br><br><br><br><br>
